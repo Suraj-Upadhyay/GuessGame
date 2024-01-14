@@ -21,7 +21,8 @@ const guessOnClick = (event) => {
     if (userGuess == randomNumber) {
         gameresult.innerHTML = "You WON!";
         gameresult.style.display = 'block';
-        startButton.style.display = 'block';
+        startButton.style.display = 'inline-block';
+        submitButton.disabled = true;
         return;
     }
     else if (userGuess < randomNumber)
@@ -41,6 +42,8 @@ const startOnClick = (event) => {
     guessesremaining.innerHTML = chances;
     numbersguessed.innerHTML = '';
     startButton.style.display = 'none';
+    submitButton.disabled = false;
+    userInput.value = '';
     randomNumber = Math.floor(Math.random()*100);
 };
 
